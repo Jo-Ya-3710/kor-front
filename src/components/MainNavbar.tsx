@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
+import {config} from "../config.ts";
 
+const apiHost = config.apiHost;
 function MainNavbar() {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await fetch("http://localhost:4001/api/categories");
+                const res = await fetch(`${apiHost}/api/categories`);
                 const result = await res.json();
 
                 if (result.success) {

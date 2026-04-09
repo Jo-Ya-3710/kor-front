@@ -2,8 +2,6 @@ import { getVisitorId } from "../utils/visitor";
 import axios from "axios";
 import {config} from "../config";
 
-const apiHost = "http://localhost:4000";
-
 type VisitPayload = {
     postId?: number | null;
     pageType: string;

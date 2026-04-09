@@ -1,9 +1,9 @@
 import type { PostItem } from "../types/post";
+import {config} from "../config";
 
-const API_BASE_URL = "http://localhost:4000/api";
-
+const apiHost = config.apiHost;
 export async function fetchPosts(): Promise<PostItem[]> {
-    const response = await fetch(`${API_BASE_URL}/posts`);
+    const response = await fetch(`${apiHost}/posts`);
 
     if (!response.ok) {
         throw new Error("Failed to fetch posts");
@@ -13,7 +13,7 @@ export async function fetchPosts(): Promise<PostItem[]> {
 }
 
 export async function fetchPostBySlug(slug: string): Promise<PostItem> {
-    const response = await fetch(`${API_BASE_URL}/posts/${slug}`);
+    const response = await fetch(`${apiHost}/posts/${slug}`);
 
     if (!response.ok) {
         throw new Error("Failed to fetch post detail");
