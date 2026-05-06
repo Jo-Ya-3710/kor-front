@@ -1,34 +1,17 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { FiChevronDown, FiInstagram, FiMenu, FiMoon, FiSearch } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 import {config} from "../config.ts";
 
-type Category = {
-    id: number;
-    name: string;
-    slug: string;
-    parent_id: number | null;
-};
-
-const rawApiHost = (config.apiHost || "http://localhost:4001").replace(/\/$/, "");
-const apiHost = rawApiHost.endsWith("/api") ? rawApiHost : `${rawApiHost}/api`;
-const fallbackCategories: Category[] = [
-    { id: 1, name: "Places", slug: "places", parent_id: null },
-    { id: 2, name: "Seoul", slug: "seoul", parent_id: 1 },
-    { id: 3, name: "Busan", slug: "busan", parent_id: 1 },
-    { id: 4, name: "K-Food", slug: "k-food", parent_id: null },
-    { id: 5, name: "Travel Tips", slug: "travel-tips", parent_id: null },
-    { id: 6, name: "About", slug: "about", parent_id: null },
-    { id: 7, name: "Contact", slug: "contact", parent_id: 6 },
-];
-
+const apiHost = config.apiHost;
 function MainNavbar() {
-    const [categories, setCategories] = useState<Category[]>(fallbackCategories);
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await fetch(`${apiHost.replace(/\/$/, "")}/categories`);
+                // const res = await fetch(`${apiHost}/api/categories`);
+                const res = await fetch("http://localhost:4001/api/categories");
                 const result = await res.json();
 
                 if (result.success) {
@@ -46,7 +29,7 @@ function MainNavbar() {
         (category) => category.parent_id === null
     );
 
-    const getChildren = (parentId: number) => {
+    const getChildren = (parentId) => {
         return categories.filter((category) => category.parent_id === parentId);
     };
 
@@ -58,7 +41,7 @@ function MainNavbar() {
                     type="button"
                     aria-label="Open menu"
                 >
-                    <FiMenu />
+                    ☰
                 </button>
 
                 <nav className="main-navbar-menu">
@@ -73,9 +56,7 @@ function MainNavbar() {
 
                                 {children.length > 0 && (
                                     <>
-                                        <span className="main-navbar-arrow">
-                                            <FiChevronDown />
-                                        </span>
+                                        <span className="main-navbar-arrow">⌄</span>
                                         <div className="main-navbar-dropdown">
                                             {children.map((child) => (
                                                 <Link
@@ -94,18 +75,15 @@ function MainNavbar() {
                     })}                </nav>
 
                 <div className="main-navbar-actions">
-                    <Link to="/contact" className="main-navbar-action-link" aria-label="Instagram">
-                        <FiInstagram />
+                    <Link to="/contact" className="main-navbar-action-link">
+                        ◎
                     </Link>
-                    <button className="main-navbar-action-btn" type="button" aria-label="Dark mode">
-                        <FiMoon />
-                    </button>
                     <button
                         className="main-navbar-action-btn"
                         type="button"
                         aria-label="Search"
                     >
-                        <FiSearch />
+                        ⌕
                     </button>
                 </div>
             </div>

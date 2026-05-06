@@ -13,9 +13,12 @@ function HomePage() {
     const [error, setError] = useState<string>("");
 
     useEffect(() => {
+        console.log("useEffect enter!!");
         const loadPosts = async () => {
             try {
                 const data = await fetchPosts();
+                console.log(data);
+
                 setPosts(data);
             } catch (err) {
                 console.error(err);
