@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FiCalendar, FiEdit3, FiUser } from "react-icons/fi";
 import type { PostItem } from "../types/post";
 
 interface PostCardProps {
@@ -8,7 +9,11 @@ interface PostCardProps {
 function PostCard({ post }: PostCardProps) {
     const thumbnailSrc = post.thumbnail || "https://via.placeholder.com/1200x800?text=No+Image";
     const authorName = post.author || "admin";
-    const formattedDate = new Date(post.created_at).toLocaleDateString();
+    const formattedDate = new Date(post.created_at).toLocaleDateString("ko-KR", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
 
     return (
         <article className="post-card">
@@ -24,9 +29,9 @@ function PostCard({ post }: PostCardProps) {
                 <p className="post-card-excerpt">{post.excerpt || "No summary available."}</p>
 
                 <div className="post-card-meta">
-                    <span>{authorName}</span>
-                    <span>•</span>
-                    <span>{formattedDate}</span>
+                    <span><FiUser /> {authorName}</span>
+                    <span><FiCalendar /> {formattedDate}</span>
+                    <span><FiEdit3 /> Edit</span>
                 </div>
             </div>
         </article>

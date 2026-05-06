@@ -12,7 +12,7 @@ html {
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: #1f2937;
+    color: #253040;
     background: #eeeeee;
 }
 
@@ -32,7 +32,7 @@ button {
 
 .site-container {
     width: 100%;
-    max-width: 1380px;
+    max-width: 1160px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -67,15 +67,17 @@ button {
 ======================================== */
 .top-banner {
     background:
-            radial-gradient(circle at 12% 20%, rgba(248, 182, 204, 0.85), transparent 24%),
-            radial-gradient(circle at 40% 35%, rgba(255, 223, 187, 0.72), transparent 24%),
-            radial-gradient(circle at 80% 22%, rgba(140, 175, 242, 0.82), transparent 28%),
-            linear-gradient(90deg, #f5d5dd 0%, #f1f4f8 48%, #7fa0db 100%);
-    border-bottom: 4px solid #f04e7d;
+            linear-gradient(90deg, rgba(235, 194, 209, 0.78) 0%, rgba(235, 232, 224, 0.62) 35%, rgba(184, 210, 234, 0.5) 62%, rgba(107, 145, 199, 0.72) 100%),
+            radial-gradient(circle at 18% 28%, rgba(246, 163, 185, 0.7), transparent 19%),
+            radial-gradient(circle at 35% 44%, rgba(239, 201, 150, 0.6), transparent 18%),
+            radial-gradient(circle at 78% 26%, rgba(108, 145, 207, 0.82), transparent 24%),
+            linear-gradient(120deg, #f2d8df 0%, #eef1f3 46%, #7f9ed2 100%);
+    border-bottom: 3px solid #db3d6d;
 }
 
 .top-banner-overlay {
-    padding: 56px 0 58px;
+    padding: 61px 0 63px;
+    backdrop-filter: saturate(105%);
 }
 
 .top-banner-inner {
@@ -86,15 +88,15 @@ button {
     margin: 0;
     font-size: 30px;
     font-weight: 800;
-    letter-spacing: 0.02em;
-    color: #101010;
+    letter-spacing: 0;
+    color: #11131a;
 }
 
 .top-banner-subtitle {
     margin: 10px 0 0;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    color: rgba(0, 0, 0, 0.48);
+    color: rgba(17, 19, 26, 0.5);
 }
 
 /* ========================================
@@ -104,15 +106,15 @@ button {
    NAVBAR
 ======================================== */
 .main-navbar {
-    background: #f8f8f8;
-    border-bottom: 1px solid #e3e3e3;
+    background: #f6f6f6;
+    border-bottom: 1px solid #dcdcdc;
 }
 
 .main-navbar-inner {
     display: grid;
     grid-template-columns: 120px 1fr 120px;
     align-items: center;
-    min-height: 58px;
+    min-height: 52px;
 }
 
 .main-navbar-icon-btn,
@@ -120,34 +122,36 @@ button {
 .main-navbar-action-link {
     border: 0;
     background: transparent;
-    color: #3f4752;
-    font-size: 18px;
+    color: #2f3845;
+    font-size: 15px;
     cursor: pointer;
+    line-height: 1;
 }
 
 .main-navbar-icon-btn {
     justify-self: start;
+    padding: 6px 0;
 }
 
 .main-navbar-menu {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 28px;
+    gap: 21px;
 }
 
 .main-navbar-item {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 16px 0;
+    gap: 4px;
+    padding: 18px 0;
 }
 
 .main-navbar-link {
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 600;
-    color: #47505d;
+    color: #26313d;
     text-decoration: none;
     display: inline-block;
 }
@@ -157,28 +161,35 @@ button {
 }
 
 .main-navbar-arrow {
+    display: inline-flex;
     font-size: 12px;
-    color: #47505d;
+    color: #2f3845;
     line-height: 1;
-    transform: translateY(1px);
 }
 
 .main-navbar-actions {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
+}
+
+.main-navbar-action-link,
+.main-navbar-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-navbar-dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 260px;
+    min-width: 180px;
     background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-    padding: 12px 0;
+    border-radius: 3px;
+    box-shadow: 0 14px 26px rgba(15, 23, 42, 0.12);
+    padding: 7px 0;
     display: none;
     z-index: 1000;
 }
@@ -190,9 +201,9 @@ button {
 .main-navbar-dropdown-link {
     display: block;
     width: 100%;
-    padding: 18px 24px;
+    padding: 10px 16px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 600;
     color: #1f2937;
     white-space: nowrap;
@@ -201,26 +212,28 @@ button {
 
 .main-navbar-dropdown-link:hover {
     background: #f8f9fa;
-    color: #e64980;
+    color: #d83e6c;
 }
 
 /* ========================================
    HOME / GRID
 ======================================== */
 .post-grid-section {
-    padding: 22px 0 42px;
+    padding: 22px 0 58px;
 }
 
 .post-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
+    align-items: start;
 }
 
 .post-card {
     overflow: hidden;
     background: #f3f3f3;
-    border-radius: 3px;
+    border-radius: 2px;
+    box-shadow: none;
 }
 
 .post-card-image-link {
@@ -229,27 +242,28 @@ button {
 }
 
 .post-card-image {
-    aspect-ratio: 1.55 / 1;
+    aspect-ratio: 1.78 / 1;
     object-fit: cover;
 }
 
 .post-card-content {
-    padding: 18px 18px 16px;
+    min-height: 218px;
+    padding: 18px 18px 15px;
     background: #f3f3f3;
 }
 
 .post-card-category {
     margin: 0 0 12px;
-    color: #df4b79;
-    font-size: 13px;
+    color: #d63d6a;
+    font-size: 11px;
     font-weight: 700;
 }
 
 .post-card-title {
     margin: 0;
-    color: #1f2937;
-    font-size: 21px;
-    line-height: 1.45;
+    color: #273140;
+    font-size: 17px;
+    line-height: 1.42;
     font-weight: 800;
 }
 
@@ -258,85 +272,138 @@ button {
 }
 
 .post-card-excerpt {
-    margin: 16px 0 0;
-    color: #454f5b;
-    font-size: 14px;
-    line-height: 1.75;
+    margin: 13px 0 0;
+    color: #4f5966;
+    font-size: 12px;
+    line-height: 1.65;
 }
 
 .post-card-meta {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 13px;
+    flex-wrap: wrap;
     margin-top: 18px;
-    padding-top: 14px;
+    padding-top: 13px;
     border-top: 1px dashed #d6d6d6;
-    color: #4b5563;
-    font-size: 12px;
+    color: #58616d;
+    font-size: 10px;
     font-weight: 600;
+}
+
+.post-card-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
 }
 
 /* ========================================
    POST DETAIL
 ======================================== */
+.post-detail-page {
+    background: #ffffff;
+}
+
 .post-detail-section {
-    padding: 40px 0 70px;
+    padding: 58px 0 86px;
 }
 
 .post-detail-article {
-    padding: 34px;
     background: #ffffff;
-    border-radius: 4px;
 }
 
-.back-link {
-    display: inline-block;
-    margin-bottom: 18px;
-    color: #4b5563;
-    font-size: 14px;
-    font-weight: 700;
+.post-detail-hero {
+    position: relative;
+    min-height: 544px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
 }
 
-.post-detail-category {
-    margin: 0 0 10px;
-    color: #df4b79;
-    font-size: 13px;
-    font-weight: 700;
+.post-detail-hero::before {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    background: inherit;
+    filter: blur(7px);
+    transform: scale(1.04);
+}
+
+.post-detail-hero-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(43, 54, 66, 0.56);
+}
+
+.post-detail-hero-pattern {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.58;
+    background:
+            radial-gradient(circle at 9% 74%, #dc3b70 0 2px, transparent 3px),
+            radial-gradient(circle at 23% 12%, #dc3b70 0 2px, transparent 3px),
+            radial-gradient(circle at 44% 39%, #dc3b70 0 2px, transparent 3px),
+            radial-gradient(circle at 64% 4%, #dc3b70 0 2px, transparent 3px),
+            radial-gradient(circle at 78% 56%, #dc3b70 0 2px, transparent 3px),
+            radial-gradient(circle at 92% 22%, #dc3b70 0 2px, transparent 3px),
+            linear-gradient(24deg, transparent 0 42%, rgba(220, 59, 112, 0.28) 42.2% 42.4%, transparent 42.6%),
+            linear-gradient(156deg, transparent 0 48%, rgba(220, 59, 112, 0.2) 48.2% 48.4%, transparent 48.6%),
+            linear-gradient(108deg, transparent 0 57%, rgba(220, 59, 112, 0.2) 57.2% 57.4%, transparent 57.6%);
+    background-size: 260px 210px, 320px 240px, 300px 260px, 360px 220px, 310px 250px, 280px 230px, 420px 320px, 520px 360px, 460px 360px;
+}
+
+.post-detail-hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
 .post-detail-title {
     margin: 0;
-    color: #111827;
-    font-size: 42px;
-    line-height: 1.25;
+    color: #ffffff;
+    font-size: 56px;
+    line-height: 1.28;
+    font-weight: 800;
+    text-wrap: balance;
 }
 
 .post-detail-meta {
     display: flex;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
     flex-wrap: wrap;
-    margin-top: 18px;
-    color: #4b5563;
-    font-size: 13px;
+    margin-top: 32px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 12px;
+    font-weight: 600;
 }
 
-.post-detail-image {
-    margin-top: 26px;
-    border-radius: 4px;
+.post-detail-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-detail-body {
+    max-width: 905px;
 }
 
 .post-detail-excerpt {
-    margin: 22px 0 0;
-    color: #374151;
+    margin: 0 0 24px;
+    color: #4c5563;
     font-size: 18px;
     line-height: 1.8;
 }
 
 .post-detail-content {
-    margin-top: 26px;
-    color: #1f2937;
-    font-size: 16px;
-    line-height: 1.95;
+    color: #16202d;
+    font-size: 18px;
+    line-height: 1.9;
 }
 
 .post-detail-content img {
@@ -348,13 +415,19 @@ button {
 .post-detail-content h2,
 .post-detail-content h3,
 .post-detail-content h4 {
-    margin-top: 34px;
-    margin-bottom: 14px;
-    color: #111827;
+    margin-top: 0;
+    margin-bottom: 27px;
+    color: #17202c;
+    font-weight: 800;
+}
+
+.post-detail-content h2 {
+    font-size: 30px;
+    line-height: 1.28;
 }
 
 .post-detail-content p {
-    margin: 0 0 18px;
+    margin: 0 0 8px;
 }
 
 /* ========================================
@@ -399,12 +472,21 @@ button {
 }
 
 @media (max-width: 760px) {
+    .site-container {
+        padding: 0 16px;
+    }
+
+    .top-banner-overlay {
+        padding: 44px 0 46px;
+    }
+
     .top-banner-title {
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .main-navbar-inner {
-        grid-template-columns: 60px 1fr 90px;
+        grid-template-columns: 42px 1fr 78px;
+        min-height: 50px;
     }
 
     .main-navbar-menu {
@@ -416,22 +498,37 @@ button {
 
     .main-navbar-link {
         white-space: nowrap;
-        font-size: 13px;
+        font-size: 11px;
+    }
+
+    .main-navbar-actions {
+        gap: 10px;
     }
 
     .post-grid {
         grid-template-columns: 1fr;
     }
     .post-card-title {
-        font-size: 18px;
+        font-size: 17px;
     }
 
-    .post-detail-title,
+    .post-detail-title {
+        font-size: 34px;
+    }
+
+    .post-detail-hero {
+        min-height: 430px;
+    }
+
+    .post-detail-section {
+        padding: 40px 0 62px;
+    }
+
+    .post-detail-content h2 {
+        font-size: 25px;
+    }
+
     .contact-page-title {
         font-size: 28px;
-    }
-
-    .post-detail-article {
-        padding: 22px;
     }
 }

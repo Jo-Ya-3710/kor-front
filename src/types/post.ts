@@ -1,4 +1,4 @@
-exportexport interface PostItem {
+export interface PostItem {
     id: number;
     title: string;
     slug: string;
